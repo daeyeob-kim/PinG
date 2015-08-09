@@ -10,6 +10,10 @@
 
 
     <LinearLayout
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:paddingRight="20dp"
+        android:paddingLeft="20dp"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -19,7 +23,7 @@
             android:layout_height="match_parent"
             android:id="@+id/imageView"
             android:src="@drawable/search_icon"
-            android:layout_marginRight="0dp"/>
+            android:scaleType="fitEnd" />
 
         <EditText
             android:layout_width="wrap_content"
@@ -27,12 +31,6 @@
             android:id="@+id/editText"
             android:layout_weight="1"
             android:background="@drawable/search_input" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="New Button"
-            android:id="@+id/button" />
 
         <ImageView
             android:layout_width="wrap_content"
@@ -54,6 +52,7 @@
             android:layout_height="match_parent">
 
             <LinearLayout
+                android:id="@+id/layout_friendslistpage1"
                 android:orientation="vertical"
                 android:layout_width="360dp"
                 android:layout_height="match_parent"
@@ -61,9 +60,11 @@
                 android:paddingRight="20dp">
 
                 <LinearLayout
+                    android:id="@+id/layout_friendslistpage1_1"
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="120dp" >
+                    android:layout_height="120dp"
+                    android:layout_marginBottom="5dp">
 
                     <LinearLayout
                         android:orientation="vertical"
@@ -88,7 +89,7 @@
                                 android:id="@+id/imageView5"
                                 android:src="@drawable/user_new"
                                 android:layout_gravity="right|top"
-                                android:layout_margin="10dp" />
+                                android:layout_margin="5dp" />
                         </FrameLayout>
 
                         <TextView
@@ -122,7 +123,7 @@
                                 android:id="@+id/imageView3"
                                 android:src="@drawable/user_new"
                                 android:layout_gravity="right|top"
-                                android:layout_margin="10dp" />
+                                android:layout_margin="5dp" />
                         </FrameLayout>
 
                         <TextView
@@ -156,7 +157,7 @@
                                 android:id="@+id/imageView7"
                                 android:src="@drawable/user_new"
                                 android:layout_gravity="right|top"
-                                android:layout_margin="10dp" />
+                                android:layout_margin="5dp" />
                         </FrameLayout>
 
                         <TextView
@@ -169,9 +170,11 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/layout_friendslistpage1_2"
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="120dp" >
+                    android:layout_height="120dp"
+                    android:layout_marginBottom="5dp">
 
                     <LinearLayout
                         android:orientation="vertical"
@@ -196,7 +199,7 @@
                                 android:id="@+id/imageView9"
                                 android:src="@drawable/user_new"
                                 android:layout_gravity="right|top"
-                                android:layout_margin="10dp" />
+                                android:layout_margin="5dp" />
                         </FrameLayout>
 
                         <TextView
@@ -230,7 +233,7 @@
                                 android:id="@+id/imageView11"
                                 android:src="@drawable/user_new"
                                 android:layout_gravity="right|top"
-                                android:layout_margin="10dp" />
+                                android:layout_margin="5dp" />
                         </FrameLayout>
 
                         <TextView
@@ -264,7 +267,7 @@
                                 android:id="@+id/imageView13"
                                 android:src="@drawable/user_new"
                                 android:layout_gravity="right|top"
-                                android:layout_margin="10dp" />
+                                android:layout_margin="5dp" />
                         </FrameLayout>
 
                         <TextView
@@ -277,9 +280,11 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/layout_friendslistpage1_3"
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="120dp" >
+                    android:layout_height="120dp"
+                    android:layout_marginBottom="5dp">
 
                     <LinearLayout
                         android:orientation="vertical"
@@ -304,7 +309,7 @@
                                 android:id="@+id/imageView15"
                                 android:src="@drawable/user_new"
                                 android:layout_gravity="right|top"
-                                android:layout_margin="10dp" />
+                                android:layout_margin="5dp" />
                         </FrameLayout>
 
                         <TextView
@@ -338,7 +343,7 @@
                                 android:id="@+id/imageView17"
                                 android:src="@drawable/user_new"
                                 android:layout_gravity="right|top"
-                                android:layout_margin="10dp" />
+                                android:layout_margin="5dp" />
                         </FrameLayout>
 
                         <TextView
@@ -364,21 +369,14 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:id="@+id/imageView18"
-                                android:src="@drawable/user_default" />
+                                android:src="@drawable/user_plus" />
 
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:id="@+id/imageView19"
-                                android:src="@drawable/user_new"
-                                android:layout_gravity="right|top"
-                                android:layout_margin="10dp" />
                         </FrameLayout>
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="김대엽"
+                            android:text="Add Friend"
                             android:id="@+id/textView9"
                             android:gravity="center|center_vertical" />
                     </LinearLayout>
@@ -390,15 +388,16 @@
     </HorizontalScrollView>
 
     <LinearLayout
+        android:gravity="center"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <RadioButton
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="New RadioButton"
-            android:id="@+id/radioButton" />
+            android:text=".   .   ."
+            android:id="@+id/textView10" />
     </LinearLayout>
 
     <HorizontalScrollView
@@ -408,48 +407,49 @@
         android:scrollbars="none">
 
         <LinearLayout
+            android:id="@+id/layout_bottom"
             android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="90dp"
+            android:layout_width="wrap_content"
+            android:layout_height="85dp"
             android:background="@drawable/bg_bottom">
 
             <Button
                 android:layout_margin="5dp"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
                 android:id="@+id/button20"
                 android:background="@drawable/icon_tmp" />
 
             <Button
                 android:layout_margin="5dp"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
                 android:id="@+id/button21"
                 android:background="@drawable/icon_tmp" />
 
             <Button
                 android:layout_margin="5dp"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
                 android:id="@+id/button22"
                 android:background="@drawable/icon_tmp"/>
 
             <Button
                 android:layout_margin="5dp"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
                 android:id="@+id/button23"
                 android:background="@drawable/icon_tmp" />
             <Button
                 android:layout_margin="5dp"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
                 android:id="@+id/button24"
                 android:background="@drawable/icon_tmp" />
             <Button
                 android:layout_margin="5dp"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
                 android:id="@+id/button25"
                 android:background="@drawable/icon_tmp" />
         </LinearLayout>
