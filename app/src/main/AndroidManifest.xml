@@ -2,6 +2,18 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.exitpoint.kkakkung" >
 
+    <!-- 일반 권한 -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+
+    <!-- GCM 권한 -->
+    <permission android:name="com.example.s.gcmsample.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+    <uses-permission android:name="com.example.s.gcmsample.permission.C2D_MESSAGE" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -32,6 +44,29 @@
             android:name=".Sample2"
             android:label="@string/title_activity_sample2" >
         </activity>
+
+        <activity
+            android:name=".GcmActivity"
+            android:label="GcmActivity">
+        </activity>
+
+
+        <!-- GCM 관련 브로드캐스트 메시지를 받을 수신자 -->
+        <receiver android:name=".GCMBroadcastReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <!-- 메시지 수신 메시지 지정 -->
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <category android:name="com.example.s.gcmsample" />
+            </intent-filter>
+        </receiver>
+
+        <service android:name=".GCMIntentService"/>
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
     </application>
 
 </manifest>

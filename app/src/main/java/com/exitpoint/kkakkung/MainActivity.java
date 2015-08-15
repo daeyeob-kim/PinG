@@ -70,7 +70,8 @@ public class MainActivity extends ActionBarActivity {
                     "2. circular test",
                     "3. sample",
                     "4. Drag Test",
-                    "5. sample2"
+                    "5. sample2",
+                    "6. GCM"
             };
             ArrayAdapter<String> simpleAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, items);
             demosListView = (ListView) rootView.findViewById(R.id.demosListView);
@@ -100,6 +101,9 @@ public class MainActivity extends ActionBarActivity {
                     break;
                 case 4:
                     startActivity(new Intent(getActivity(), Sample2.class));
+                    break;
+                case 5:
+                    startActivity(new Intent(getActivity(), GcmActivity.class));
                     break;
             }
         }
