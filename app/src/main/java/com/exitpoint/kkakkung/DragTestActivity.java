@@ -14,7 +14,7 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 
-public class DragTestActivity extends Activity {
+public class DragTestActivity extends ActionBarActivity {
 
     private Button icon;
     private Button icon2;

@@ -8,5 +8,8 @@
     <string name="title_activity_sample">SampleActivity</string>
     <string name="title_activity_drag_test">DragTestActivity</string>
     <string name="title_activity_sample2">Sample2</string>
+    <string name="title_activity_inflater_test">InflaterTest</string>
+    <string name="title_activity_sample3">Sample3</string>
+    <string name="title_activity_add_friend">AddFriend</string>
 
 </resources>

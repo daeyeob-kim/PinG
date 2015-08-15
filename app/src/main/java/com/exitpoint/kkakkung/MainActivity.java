@@ -28,7 +28,6 @@ public class MainActivity extends ActionBarActivity {
                     .add(R.id.container, new ContentFragment())
                     .commit();
         }
-
     }
 
     @Override
@@ -56,7 +55,8 @@ public class MainActivity extends ActionBarActivity {
     public static class ContentFragment extends Fragment implements AdapterView.OnItemClickListener {
 
         private ListView demosListView;
-
+        Intent ServiceIntent;
+        int requestCode;
 
         public ContentFragment() {
         }
@@ -66,9 +66,10 @@ public class MainActivity extends ActionBarActivity {
                                  Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_main, container, false);
 
-            String[] items = { "1",
-                    "2. circular test",
-                    "3. sample",
+            String[] items = {
+                    "1. inflator",
+                    "2. Sample3",
+                    "3. addFriend",
                     "4. Drag Test",
                     "5. sample2"
             };
@@ -79,21 +80,30 @@ public class MainActivity extends ActionBarActivity {
             return rootView;
         }
 
+        public void onActivityResult(int requestCode, int resultCode, Intent data) {
+            super.onActivityResult(requestCode, resultCode, data);
+            Toast.makeText(this.getActivity(),
+                    "testCode: " + String.valueOf(requestCode)
+                            + "\nResultCode: " + String.valueOf(resultCode), Toast.LENGTH_SHORT).show();
+        }
+
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
             switch (position) {
                 case 0: //1. 액티비티 추가
                         //2. 매니페스트에 추가
                         //3. 레이아웃 추가
                         //4. 아래 양식대로 넣으면 아마 될지도..
-                    Toast.makeText(getActivity().getApplicationContext(),
-                            "1번!!",Toast.LENGTH_LONG).show();
-                    //startActivity(new Intent(getActivity(), Sample2Activity.class));
+                    startActivity(new Intent(getActivity(), InflaterTest.class));
                     break;
                 case 1:
-                    startActivity(new Intent(getActivity(), CircularTest.class));
+                    startActivity(new Intent(getActivity(), Sample3.class));
                     break;
                 case 2:
-                    startActivity(new Intent(getActivity(), SampleActivity.class));
+                    //startActivityForResult(Intent(), AddFriend.class);
+                    Intent intent = new Intent(getActivity(), AddFriend.class);
+                    requestCode = 10;
+                    startActivityForResult(intent, requestCode);
+
                     break;
                 case 3:
                     startActivity(new Intent(getActivity(), DragTestActivity.class));
@@ -103,6 +113,5 @@ public class MainActivity extends ActionBarActivity {
                     break;
             }
         }
-
     }
 }
